@@ -14,5 +14,5 @@ FROM base as php81
 # Install PHP and required extensions for Composer
 RUN apt install php8.1 php8.1-phar php8.1-iconv -y
 
-FROM php-83 as php83-pimcore
+FROM php83 as php83-pimcore
 RUN apt install php8.3-pdo -y

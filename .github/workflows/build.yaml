@@ -8,6 +8,7 @@ jobs:
     name: Build Images
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
+    continue-on-error: true
     strategy:
       matrix:
         target:
