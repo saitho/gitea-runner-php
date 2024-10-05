@@ -15,7 +15,7 @@ https://hub.docker.com/r/saitho/gitea-runner-php
 
 Edit `/data/.runner` on the act image and add it to labels section:
 
-```diff+json
+```json
 {
     "labels": [
         "ubuntu-php83:docker://saitho/gitea-runner-php:php83"
@@ -44,3 +44,42 @@ Please submit a PR in case you need a separate image for your application.
 | Image Tag                               | Use Case                              |
 |-----------------------------------------|---------------------------------------|
 | `saitho/gitea-runner-php:php83-pimcore` | PHP 8.3 image for Pimcore builds      |
+
+## Examples
+
+### Pimcore
+
+`/data/.runner`
+```json
+{
+    "labels": [
+        "ubuntu-php83:docker://saitho/gitea-runner-php:php83"
+    ]
+}
+```
+
+Repository: `.gitea/workflows/linter.yml`
+```
+jobs:
+    linter:
+        name: Lint
+        runs-on: ubuntu-pimcore
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
+
+            - name: Install dependencies
+              run: composer install --ignore-platform-reqs --no-scripts
+
+            # Set server_version via config so Pimcore doesn't try to look it up which results in an error
+            - name: Dummy database config for class builds
+              run: |
+                echo 'doctrine: { dbal: { connections: { default: { server_version: "10.3.39-MariaDB-1:10.3.39+maria~ubu2004-log" } } } }' > config/local/database.yaml
+
+            - name: Build Pimcore classes
+              run: bin/console pimcore:build:classes -n
+
+            - name: phpstan
+              run: composer run phpstan
+```
