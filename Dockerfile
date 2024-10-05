@@ -15,4 +15,4 @@ FROM base as php81
 RUN apt install php8.1 php8.1-phar php8.1-iconv -y
 
 FROM php83 as php83-pimcore
-RUN apt install php8.3-pdo php8.3-mysql -y
+RUN apt install php8.3-pdo php8.3-mysql php8.3-dom -y
