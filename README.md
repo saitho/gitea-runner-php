@@ -24,3 +24,19 @@ Edit `/data/.runner` on the act image and add it to labels section:
 ```
 
 Now, create workflows with `runs-on: ubuntu-latest-php` and the image should be used.
+
+## Images
+
+### Base
+
+| Image Tag                        | Use Case                              |
+|----------------------------------|---------------------------------------|
+| `saitho/gitea-runner-php:php8.3` | Plain PHP 8.3 image with dependencies |
+| `saitho/gitea-runner-php:php8.2` | Plain PHP 8.2 image with dependencies |
+| `saitho/gitea-runner-php:php8.1` | Plain PHP 8.1 image with dependencies |
+
+### Applications
+
+| Image Tag                                | Use Case                              |
+|------------------------------------------|---------------------------------------|
+| `saitho/gitea-runner-php:php8.3-pimcore` | PHP 8.3 image for Pimcore builds      |
