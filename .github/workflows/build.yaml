@@ -10,10 +10,10 @@ jobs:
     strategy:
       matrix:
         target:
-          - php8.3
-          - php8.2
-          - php8.1
-          - php8.3-pimcore
+          - php83
+          - php82
+          - php81
+          - php83-pimcore
     steps:
       -
         name: Set up Docker Buildx

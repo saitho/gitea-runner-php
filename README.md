@@ -29,14 +29,14 @@ Now, create workflows with `runs-on: ubuntu-latest-php` and the image should be 
 
 ### Base
 
-| Image Tag                        | Use Case                              |
-|----------------------------------|---------------------------------------|
-| `saitho/gitea-runner-php:php8.3` | Plain PHP 8.3 image with dependencies |
-| `saitho/gitea-runner-php:php8.2` | Plain PHP 8.2 image with dependencies |
-| `saitho/gitea-runner-php:php8.1` | Plain PHP 8.1 image with dependencies |
+| Image Tag                       | Use Case                              |
+|---------------------------------|---------------------------------------|
+| `saitho/gitea-runner-php:php83` | Plain PHP 8.3 image with dependencies |
+| `saitho/gitea-runner-php:php82` | Plain PHP 8.2 image with dependencies |
+| `saitho/gitea-runner-php:php81` | Plain PHP 8.1 image with dependencies |
 
 ### Applications
 
-| Image Tag                                | Use Case                              |
-|------------------------------------------|---------------------------------------|
-| `saitho/gitea-runner-php:php8.3-pimcore` | PHP 8.3 image for Pimcore builds      |
+| Image Tag                               | Use Case                              |
+|-----------------------------------------|---------------------------------------|
+| `saitho/gitea-runner-php:php83-pimcore` | PHP 8.3 image for Pimcore builds      |
