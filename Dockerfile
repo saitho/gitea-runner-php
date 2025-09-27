@@ -2,6 +2,10 @@ FROM gitea/runner-images:ubuntu-latest AS base
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 RUN sudo add-apt-repository ppa:ondrej/php && apt update
 
+FROM base as php84
+# Install PHP and required extensions for Composer
+RUN apt install php8.4 php8.4-phar php8.4-iconv -y
+
 FROM base as php83
 # Install PHP and required extensions for Composer
 RUN apt install php8.3 php8.3-phar php8.3-iconv -y
@@ -16,3 +20,6 @@ RUN apt install php8.1 php8.1-phar php8.1-iconv -y
 
 FROM php83 as php83-pimcore
 RUN apt install php8.3-pdo php8.3-mysql php8.3-dom php8.3-intl php8.3-redis -y
+
+FROM php84 as php83-pimcore
+RUN apt install php8.4-pdo php8.4-mysql php8.4-dom php8.4-intl php8.4-redis -y
