@@ -18,6 +18,7 @@ jobs:
           - php81
           - php83-pimcore
           - php84-pimcore
+          - php85-opendxp
     steps:
       -
         name: Set up Docker Buildx

@@ -18,12 +18,12 @@ Edit `/data/.runner` on the act image and add it to labels section:
 ```json
 {
     "labels": [
-        "ubuntu-php83:docker://saitho/gitea-runner-php:php83"
+        "ubuntu-php85:docker://saitho/gitea-runner-php:php85"
     ]
 }
 ```
 
-Now, create workflows with `runs-on: ubuntu-php83` and the image should be used.
+Now, create workflows with `runs-on: ubuntu-php85` and the image should be used.
 
 ## Images
 
@@ -33,6 +33,8 @@ The images are updated every Monday automatically via GitHub Actions.
 
 | Image Tag                       | Use Case                              |
 |---------------------------------|---------------------------------------|
+| `saitho/gitea-runner-php:php85` | Plain PHP 8.5 image with dependencies |
+| `saitho/gitea-runner-php:php84` | Plain PHP 8.4 image with dependencies |
 | `saitho/gitea-runner-php:php83` | Plain PHP 8.3 image with dependencies |
 | `saitho/gitea-runner-php:php82` | Plain PHP 8.2 image with dependencies |
 | `saitho/gitea-runner-php:php81` | Plain PHP 8.1 image with dependencies |
@@ -44,6 +46,8 @@ Please submit a PR in case you need a separate image for your application.
 | Image Tag                               | Use Case                              |
 |-----------------------------------------|---------------------------------------|
 | `saitho/gitea-runner-php:php83-pimcore` | PHP 8.3 image for Pimcore builds      |
+| `saitho/gitea-runner-php:php84-pimcore` | PHP 8.4 image for Pimcore builds      |
+| `saitho/gitea-runner-php:php85-opendxp` | PHP 8.5 image for OpenDXP builds      |
 
 ## Examples
 
@@ -53,7 +57,7 @@ Please submit a PR in case you need a separate image for your application.
 ```json
 {
     "labels": [
-        "ubuntu-php83:docker://saitho/gitea-runner-php:php83"
+        "ubuntu-pimcore:docker://saitho/gitea-runner-php:php84-pimcore"
     ]
 }
 ```
