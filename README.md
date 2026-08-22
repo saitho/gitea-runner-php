@@ -36,8 +36,6 @@ The images are updated every Monday automatically via GitHub Actions.
 | `saitho/gitea-runner-php:php85` | Plain PHP 8.5 image with dependencies |
 | `saitho/gitea-runner-php:php84` | Plain PHP 8.4 image with dependencies |
 | `saitho/gitea-runner-php:php83` | Plain PHP 8.3 image with dependencies |
-| `saitho/gitea-runner-php:php82` | Plain PHP 8.2 image with dependencies |
-| `saitho/gitea-runner-php:php81` | Plain PHP 8.1 image with dependencies |
 
 Some applications require additional packages in order to install or complete builds,
 before they can be tested via linters or unit tests. You can find some below.

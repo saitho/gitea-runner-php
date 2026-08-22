@@ -14,8 +14,6 @@ jobs:
         target:
           - php84
           - php83
-          - php82
-          - php81
           - php83-pimcore
           - php84-pimcore
           - php85-opendxp
